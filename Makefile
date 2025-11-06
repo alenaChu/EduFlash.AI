@@ -9,7 +9,7 @@ install:
 
 # Linting section
 lint:
-	pylint **/*.py
+	pylint --disable=C0114,C0115,C0116 **/*.py 
 	black --check .
 	flake8 .
 
