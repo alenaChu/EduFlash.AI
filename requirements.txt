@@ -6,6 +6,10 @@ gradio
 beautifulsoup4
 requests
 pylint
+black
+flake8
+pytest
+pytest-cov  
 wheel
 setuptools
 build
