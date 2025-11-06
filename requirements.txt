@@ -6,3 +6,6 @@ gradio
 beautifulsoup4
 requests
 pylint
+wheel
+setuptools
+build

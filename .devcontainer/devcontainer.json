@@ -1,0 +1,14 @@
+{
+  "name": "EduFlash Dev",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt || true",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "GitHub.copilot",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
