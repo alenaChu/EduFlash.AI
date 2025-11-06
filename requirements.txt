@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+paddleocr
+pillow
+gradio
+beautifulsoup4
+requests
+pylint
