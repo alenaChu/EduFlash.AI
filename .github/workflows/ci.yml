@@ -1,0 +1,35 @@
+name: CI - Lint and Test via Makefile
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install Make and system deps
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y make
+
+    - name: Install dependencies
+      run: make install
+
+    - name: Lint code
+      run: make lint
+
+    - name: Run tests
+      run: make test
+      
