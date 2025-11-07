@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EduFlash.AI OCR demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        textarea { width: 100%; height: 300px; }
+        img { max-width: 400px; display:block; margin-top:20px; }
+        form { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h2>📖 OCR demo — upload textbook photo</h2>
+
+    <form action="/ocr" method="post" enctype="multipart/form-data">
+        <label>Choose backend:</label>
+        <select name="backend">
+            <option value="tesseract" {% if backend=="tesseract" %}selected{% endif %}>TesseractOCR</option>
+        </select>
+        <br><br>
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Run OCR</button>
+    </form>
+
+    {% if image_url %}
+        <img src="{{ image_url }}" alt="Uploaded image">
+    {% endif %}
+
+    {% if text %}
+        <h3>Recognized text:</h3>
+        <textarea readonly>{{ text }}</textarea>
+    {% endif %}
+</body>
+</html>

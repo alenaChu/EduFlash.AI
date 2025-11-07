@@ -1,8 +1,8 @@
 fastapi
 uvicorn
-paddleocr
 pillow
-gradio
+pytesseract
+opencv-python-headless
 beautifulsoup4
 requests
 pylint
