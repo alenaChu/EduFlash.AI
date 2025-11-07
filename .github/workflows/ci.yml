@@ -19,10 +19,10 @@ jobs:
       with:
         python-version: "3.11"
 
-    - name: Install Make and system deps
+    - name: Install Make and system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y make
+        sudo apt-get install -y make tesseract-ocr tesseract-ocr-eng tesseract-ocr-pol tesseract-ocr-spa libgl1 libglib2.0-0
 
     - name: Install dependencies
       run: make install
